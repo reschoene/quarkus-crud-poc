@@ -1,3 +1,0 @@
-[EXECUTABLE]
-quarkus-crud-1.0.0-SNAPSHOT-runner
-
