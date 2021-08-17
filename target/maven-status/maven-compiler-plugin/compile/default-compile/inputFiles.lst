@@ -1,1 +1,3 @@
+/mnt/dados/Desenv/quarkus-crud-poc/src/main/java/br/com/reschoene/entities/Produto.java
 /mnt/dados/Desenv/quarkus-crud-poc/src/main/java/br/com/reschoene/GreetingResource.java
+/mnt/dados/Desenv/quarkus-crud-poc/src/main/java/br/com/reschoene/resources/ProdutoResource.java
