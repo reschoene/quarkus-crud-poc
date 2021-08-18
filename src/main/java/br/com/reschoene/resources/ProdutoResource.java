@@ -4,13 +4,13 @@ import br.com.reschoene.entities.Produto;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.transaction.Transactional;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
 @Path("/produtos")
+@Transactional
 public class ProdutoResource {
     @Inject
     EntityManager entityManager;
@@ -19,5 +19,11 @@ public class ProdutoResource {
     @Produces(value = MediaType.APPLICATION_JSON)
     public List<Produto> getProdutos(){
         return entityManager.createQuery("select p from Produto p", Produto.class).getResultList();
+    }
+
+    @POST
+    @Consumes(value = MediaType.APPLICATION_JSON)
+    public void addProduto(Produto p){
+        entityManager.persist(p);
     }
 }
