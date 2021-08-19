@@ -1,3 +1,4 @@
 br/com/reschoene/resources/ProdutoResource.class
-br/com/reschoene/GreetingResource.class
+br/com/reschoene/services/ProdutoService.class
 br/com/reschoene/entities/Produto.class
+br/com/reschoene/GreetingResource.class

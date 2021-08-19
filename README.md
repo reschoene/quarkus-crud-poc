@@ -1,5 +1,16 @@
 # quarkus-crud Project
 
+## starting services dependencies
+run `docker-compose -f ./src/main/docker/docker-compose-dependencies.yml up`
+
+## Access the Jaeger UI
+navigate to http://localhost:16686
+
+## Access the Postgre Admin (pgAdmin 4)
+navigate to http://localhost:16543. Efetue login utilizando as credenciais abaixo:
+Email: renato.schoene@email.com.br
+Password: root
+
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
 If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
