@@ -1,65 +1,71 @@
-# quarkus-crud Project
+# Quarkus CRUD POC
 
-## starting services dependencies
-run `docker-compose -f ./src/main/docker/docker-compose-dependencies.yml up`
+### Sobre a POC
+Esta POC tem por objetivo explorar o uso do framework Quarkus para criação de endpoints *REST* referentes a um cadastro simples de produtos (*CRUD*)
 
-## Access the Jaeger UI
-navigate to http://localhost:16686
+### Tecnologias adotadas
+Esta solução utilizou-se da seguinte stack:
++ ***Quarkus***: *Quarkus* é um framework Java voltado para containers e de stack completa, o qual permite tanto a compilação voltada para JVM quanto a nativa. Além disso ele traz a proposta de otimizar o tempo de boot das aplicações e reduzir seu consumo de memória. Seu slogan é: Quarkus, o framework Java supersônico e subatômico.
++ ***Jaeger com OpenTracing***: *Jaeger* é um software open source aderente ao padrão OpenTracing para rastreamento de transações entre serviços distribuídos. Ele é usado para monitorar e solucionar problemas em ambientes de microsserviços complexos. OpenTracing é parte integrante da especificação do *Microprofile*, sendo a parte responsável por definir comportamentos e APIs para acessar objetos de rastreamento aderentes ao padrão OpenTracing.
++ ***RESTEasy com Jackson***: *RESTEasy* é uma implementação da especificação *JAX-RS* (Java API for RESTful Web Services). JAX_RS é parte integrante da especificação do *Microprofile* e define padrões para APIs de cliente e servidor.  Jackson é uma biblioteca que permite a serialização e deserialização de objetos (conversão entre objetos Java e suas representações em String JSON).
++ ***JPA com Hibernate e Panache***: *Hibernate* é um framework ORM (object Relational Mapper) que implementa a especificação JPA (Java Persistence API). Panache é uma extensão do Quarkus que facilita a criação de entidades e torna mais simples o uso do Hibernate. Na solução em questão, foi adotado o uso do padrão Active Record implementado pelo Panache, o qual dispensa o uso de classes DAO ou Repositories, simplificando a solução.
++ ***PostgreSQL*** : banco de dados relacional como forma de persistência dos dados.
++ ***Docker e docker-compose***: *Docker* é uma tecnologia que permite aos desenvolvedores empacotar, entregar e executar aplicações em containers Linux leves e autossuficientes. *Docker-compose* é uma ferramenta para definição e execução de múltiplos containers. Reuni todas as depedências externas do projeto no arquivo `docker-compose-dependencies.yml` , permitindo desta forma subir os serviços pelos quais dependo usando o *docker-compose.*
 
-## Access the Postgre Admin (pgAdmin 4)
-navigate to http://localhost:16543. Efetue login utilizando as credenciais abaixo:
-Email: renato.schoene@email.com.br
-Password: root
+## Passos para compilar e testar a solução
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+#### Subir as dependências externas
 
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+A partir da pasta raíz do projeto, execute o comando: `docker-compose -f ./src/main/docker/docker-compose-dependencies.yml up`
 
-## Running the application in dev mode
+#### Acessar o Jaeger UI para visualizar as transações
 
-You can run your application in dev mode that enables live coding using:
+Abra a página http://localhost:16686
+
+#### Acessar o admin do Postgres (pgAdmin 4)
+
+Abra a página http://localhost:16543 e efetue login utilizando as credenciais abaixo:
+*Email*: `renato.schoene@email.com.br`
+*Password*: `root`
+
+#### Compilar e iniciar a aplicação em modo de desenvolvimento
+
+A partir da raíz do projeto, execute o comando abaixo para compilar e executar a aplicação em modo de desenvolvimento, o qual permite live-reload e disponibiliza o DEV UI:
 ```shell script
 ./mvnw compile quarkus:dev
 ```
 
-> **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at http://localhost:8080/q/dev/.
+> **_NOTE:_**  a página do Dev UI pode ser acessada pelo endereço http://localhost:8080/q/dev/ , ficando disponível apenas no modo DEV.
 
-## Packaging and running the application
+#### Gerar executável JVM da aplicação
 
-The application can be packaged using:
+Rode o comando abaixo para gerar o  arquivo`quarkus-run.jar` no diretório `target/quarkus-app/`:
 ```shell script
 ./mvnw package
 ```
-It produces the `quarkus-run.jar` file in the `target/quarkus-app/` directory.
-Be aware that it’s not an _über-jar_ as the dependencies are copied into the `target/quarkus-app/lib/` directory.
+Este Jar não é completo, sendo que suas dependências são geradas no diretório `target/quarkus-app/lib/`.
 
-If you want to build an _über-jar_, execute the following command:
+Caso opte por ter um Jar completo (já com suas dependências), rode o comando:
 ```shell script
 ./mvnw package -Dquarkus.package.type=uber-jar
 ```
 
-The application is now runnable using `java -jar target/quarkus-app/quarkus-run.jar`.
+A aplicação pode ser executada pelo comando abaixo:
 
-## Creating a native executable
+ `java -jar target/quarkus-app/quarkus-run.jar`.
 
-You can create a native executable using: 
+#### Gerar executável nativo da aplicação
+
+Execute o comando abaixo para realizar a compilação nativa da aplicação: 
 ```shell script
 ./mvnw package -Pnative
 ```
 
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using: 
+ou, se você não possuir o GraalVM instalado, você pode gerar um executável nativo em container rodando: 
 ```shell script
 ./mvnw package -Pnative -Dquarkus.native.container-build=true
 ```
 
-You can then execute your native executable with: `./target/quarkus-crud-1.0.0-SNAPSHOT-runner`
+Rode o comando abaixo para executar a aplicação nativa:
 
-If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.html.
-
-## Provided Code
-
-### RESTEasy JAX-RS
-
-Easily start your RESTful Web Services
-
-[Related guide section...](https://quarkus.io/guides/getting-started#the-jax-rs-resources)
+ `./target/quarkus-crud-1.0.0-SNAPSHOT-runner`
