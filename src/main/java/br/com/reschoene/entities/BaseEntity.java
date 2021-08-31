@@ -12,20 +12,20 @@ public abstract class BaseEntity extends PanacheEntityBase {
     public Long id;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "created_date")
-    public Date createdDate;
+    @Column(name = "created_at")
+    public Date createdAt;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "updated_date")
-    public Date updatedDate;
+    @Column(name = "updated_at")
+    public Date updatedAt;
 
     @PrePersist
     protected void onCreate() {
-        updatedDate = createdDate = new Date();
+        updatedAt = createdAt = new Date();
     }
 
     @PreUpdate
     protected void onUpdate() {
-        updatedDate = new Date();
+        updatedAt = new Date();
     }
 }
