@@ -1,2 +1,2 @@
-/mnt/dados/Desenv/quarkus-crud-poc/src/test/java/br/com/reschoene/NativeGreetingResourceIT.java
-/mnt/dados/Desenv/quarkus-crud-poc/src/test/java/br/com/reschoene/GreetingResourceTest.java
+/mnt/dados/Desenv/quarkus-crud-poc/src/test/java/br/com/reschoene/ProductResourceTest.java
+/mnt/dados/Desenv/quarkus-crud-poc/src/test/java/br/com/reschoene/NativeProductsResourceIT.java

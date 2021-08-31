@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: br.com.reschoene.ProductResourceTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.715 s - in br.com.reschoene.ProductResourceTest

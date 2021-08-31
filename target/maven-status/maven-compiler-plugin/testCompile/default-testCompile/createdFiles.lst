@@ -1,2 +1,3 @@
-br/com/reschoene/GreetingResourceTest.class
-br/com/reschoene/NativeGreetingResourceIT.class
+META-INF/panache-archive.marker
+br/com/reschoene/NativeProductsResourceIT.class
+br/com/reschoene/ProductResourceTest.class
