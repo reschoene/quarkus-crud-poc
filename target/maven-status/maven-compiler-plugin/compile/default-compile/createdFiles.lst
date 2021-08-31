@@ -1,4 +1,5 @@
-br/com/reschoene/resources/ProdutoResource.class
-br/com/reschoene/services/ProdutoService.class
-br/com/reschoene/entities/Produto.class
-br/com/reschoene/GreetingResource.class
+br/com/reschoene/resources/ProductResource.class
+br/com/reschoene/entities/Product.class
+br/com/reschoene/services/ProductService.class
+META-INF/panache-archive.marker
+br/com/reschoene/entities/BaseEntity.class

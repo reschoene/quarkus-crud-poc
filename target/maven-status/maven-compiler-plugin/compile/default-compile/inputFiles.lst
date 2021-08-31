@@ -1,4 +1,4 @@
-/mnt/dados/Desenv/quarkus-crud-poc/src/main/java/br/com/reschoene/entities/Produto.java
-/mnt/dados/Desenv/quarkus-crud-poc/src/main/java/br/com/reschoene/services/ProdutoService.java
-/mnt/dados/Desenv/quarkus-crud-poc/src/main/java/br/com/reschoene/GreetingResource.java
-/mnt/dados/Desenv/quarkus-crud-poc/src/main/java/br/com/reschoene/resources/ProdutoResource.java
+/mnt/dados/Desenv/quarkus-crud-poc/src/main/java/br/com/reschoene/services/ProductService.java
+/mnt/dados/Desenv/quarkus-crud-poc/src/main/java/br/com/reschoene/entities/Product.java
+/mnt/dados/Desenv/quarkus-crud-poc/src/main/java/br/com/reschoene/entities/BaseEntity.java
+/mnt/dados/Desenv/quarkus-crud-poc/src/main/java/br/com/reschoene/resources/ProductResource.java
