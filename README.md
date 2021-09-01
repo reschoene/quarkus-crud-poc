@@ -19,9 +19,23 @@ Esta solução utilizou-se da seguinte stack:
 
   
 
-##### Tempo de inicialização da POC com a compilação nativa
+### Comparação do boot time e uso de memória da solução rodando como aplicação JVM e nativa
 
-![QuarkusStartup](./src/main/resources/QuarkusNativeStartup.png) 
+##### Boot time como aplicação JVM
+
+![QuarkusStartup](./src/main/resources/img/QuarkusBootimeOnJVM.png)
+
+##### Boot time como aplicação nativa
+
+#### ![QuarkusStartup](./src/main/resources/img/QuarkusNativeStartup.png) 
+
+##### Uso de memória como aplicação JVM
+
+![QuarkusStartup](./src/main/resources/img/memUsageFromJVM.png)
+
+##### Uso de memória como aplicação nativa
+
+![QuarkusStartup](./src/main/resources/img/nativeQuarkusMemUsage.png)
 
 
 
@@ -29,11 +43,17 @@ Esta solução utilizou-se da seguinte stack:
 
 #### Subir as dependências externas
 
-A partir da pasta raíz do projeto, execute o comando: `docker-compose -f ./src/main/docker/docker-compose-dependencies.yml up`
+A partir da pasta raíz do projeto, execute o comando: 
+
+`docker-compose -f ./src/main/docker/docker-compose-dependencies.yml up`
+
+![QuarkusStartup](./src/main/resources/img/docker-compose-ps.png)
 
 #### Acessar o Jaeger UI para visualizar as transações
 
 Abra a página http://localhost:16686
+
+![QuarkusStartup](./src/main/resources/img/Jaeger UI.png)
 
 #### Acessar o admin do Postgres (pgAdmin 4)
 
@@ -41,9 +61,13 @@ Abra a página http://localhost:16543 e efetue login utilizando as credenciais a
 *Email*: `renato.schoene@email.com.br`
 *Password*: `root`
 
+![QuarkusStartup](./src/main/resources/img/PGAdmin.png)
+
 #### Importar collection de exemplo no Postman
 
 importe o arquivo `src/main/resources/QuarkusCrud.postman_collection.json` no Postman para chamar os endpoints do serviço REST
+
+![QuarkusStartup](./src/main/resources/img/EndpointsServico.png)
 
 #### Compilar e iniciar a aplicação em modo de desenvolvimento
 
