@@ -23,19 +23,19 @@ Esta solução utilizou-se da seguinte stack:
 
 ##### Boot time como aplicação JVM
 
-![QuarkusStartup](./src/main/resources/img/QuarkusBootimeOnJVM.png)
+![QuarkusBootimeOnJVM](./src/main/resources/img/QuarkusBootimeOnJVM.png)
 
 ##### Boot time como aplicação nativa
 
-#### ![QuarkusStartup](./src/main/resources/img/QuarkusNativeStartup.png) 
+![QuarkusNativeStartup](./src/main/resources/img/QuarkusNativeStartup.png) 
 
 ##### Uso de memória como aplicação JVM
 
-![QuarkusStartup](./src/main/resources/img/memUsageFromJVM.png)
+![memUsageFromJVM](./src/main/resources/img/memUsageFromJVM.png)
 
 ##### Uso de memória como aplicação nativa
 
-![QuarkusStartup](./src/main/resources/img/nativeQuarkusMemUsage.png)
+![nativeQuarkusMemUsage](./src/main/resources/img/nativeQuarkusMemUsage.png)
 
 
 
@@ -47,13 +47,13 @@ A partir da pasta raíz do projeto, execute o comando:
 
 `docker-compose -f ./src/main/docker/docker-compose-dependencies.yml up`
 
-![QuarkusStartup](./src/main/resources/img/docker-compose-ps.png)
+![docker-compose](./src/main/resources/img/docker-compose-ps.png)
 
 #### Acessar o Jaeger UI para visualizar as transações
 
 Abra a página http://localhost:16686
 
-![QuarkusStartup](./src/main/resources/img/Jaeger UI.png)
+![JaegerUI](./src/main/resources/img/JaegerUI.png)
 
 #### Acessar o admin do Postgres (pgAdmin 4)
 
@@ -61,13 +61,13 @@ Abra a página http://localhost:16543 e efetue login utilizando as credenciais a
 *Email*: `renato.schoene@email.com.br`
 *Password*: `root`
 
-![QuarkusStartup](./src/main/resources/img/PGAdmin.png)
+![PGAdmin](./src/main/resources/img/PGAdmin.png)
 
 #### Importar collection de exemplo no Postman
 
 importe o arquivo `src/main/resources/QuarkusCrud.postman_collection.json` no Postman para chamar os endpoints do serviço REST
 
-![QuarkusStartup](./src/main/resources/img/EndpointsServico.png)
+![EndpointsServico](./src/main/resources/img/EndpointsServico.png)
 
 #### Compilar e iniciar a aplicação em modo de desenvolvimento
 
